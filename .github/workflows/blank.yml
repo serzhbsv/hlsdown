@@ -22,7 +22,7 @@ jobs:
 
       - name: Download HLS video
         run: |
-          yt-dlp --output "output.mp4" "YOUR_HLS_PLAYLIST_URL"
+          yt-dlp --output "output.mp4" "https://cdn-400.entouaedon.com/stream2/cdn-400/59ff3b7b875a8b4fea5a63135ae36d06/MJTMsp1RshGTygnMNRUR2N2MSlnWXZEdMNDZzQWe5MDZzMmdZJTO1R2RWVHZDljekhkSsl1VwYnWtx2cihVT2lFVFFjWUFleNRURw0UbVNTTUlENNpWUz4kMZpnTX10MaRFZpp1RJlnTqFUP:1753044053:91.193.176.203:7a1cf993a2dc8040ed9929852e824423bde8e7ba1cbe359bc7738c5ca0e35c40/480/index.m3u8"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
