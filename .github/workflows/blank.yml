@@ -1,0 +1,31 @@
+name: Download HLS Video
+
+on:
+  workflow_dispatch:  # Allow manual triggering
+  schedule:
+    - cron: '0 0 * * *' # Download daily
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+
+      - name: Install yt-dlp
+        run: pip install yt-dlp
+
+      - name: Download HLS video
+        run: |
+          yt-dlp --output "output.mp4" "YOUR_HLS_PLAYLIST_URL"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: downloaded-video
+          path: output.mp4
