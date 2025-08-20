@@ -2,8 +2,8 @@ name: Download HLS Video
 
 on:
   workflow_dispatch:  # Allow manual triggering
-  schedule:
-    - cron: '0 0 * * *' # Download daily
+ # schedule:
+  #  - cron: '0 0 * * *' # Download daily
 
 jobs:
   download:
